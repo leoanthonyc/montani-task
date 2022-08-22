@@ -6,6 +6,6 @@ class PublisherTest < ActiveSupport::TestCase
   end
 
   test "can't save when name is not present" do
-    assert Publisher.new.save
+    assert_not Publisher.new.save
   end
 end
