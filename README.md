@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
 * System dependencies
+		- Install [Ruby 2.7.2](https://www.ruby-lang.org/en/documentation/installation/)
+		- Install [Rails 7.0.2](https://guides.rubyonrails.org/getting_started.html) 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
+* Instructions
+		1. Clone the repository
+		2. Move to the cloned repository and run the following commands:
+			```bash
+			bundle install
+			bundle exec rake db:migrate
+			bundle exec rake db:seed
+			rails s
+			```
+		3. Go to [localhost](localhost:3000)
 
 * How to run the test suite
+		```bash
+		rails test
+		```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
