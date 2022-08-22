@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  def index
+  end
+
   def show
     isbn_13 = params[:id]
     unless ISBN.valid?(isbn_13)
