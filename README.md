@@ -20,3 +20,5 @@
 		rails test
 		```
 
+* Others
+		Huge thanks to [tkersey](https://github.com/tkersey) for writing a [library](https://github.com/tkersey/isbn) that manipulate ISBNs.
