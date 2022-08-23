@@ -18,13 +18,13 @@
       </div>
     <% end %>
 
-    <div class="container container-fluid mt-3">
+    <div class="container mt-3">
       <%# Header %>
       <div class="row">
-        <div class="col-8">
+        <div class="col">
           <%= link_to 'Books', root_path, class: 'home-btn btn btn-outline-secondary btn-sm' %>
         </div>
-        <div class="col-4">
+        <div class="col">
           <%= form_with url: '/isbn/search', class: 'd-flex' do %>
             <%= search_field_tag :isbn, nil, placeholder: "ISBN13 or ISBN10", minlength: 10 %>
             <%= submit_tag "Search", class: "btn btn-outline-secondary btn-sm search-btn" %>
