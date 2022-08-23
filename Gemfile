@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "isbn"
+
+gem "cssbundling-rails", "~> 1.1"
