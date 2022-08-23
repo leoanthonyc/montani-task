@@ -16,7 +16,7 @@ class IsbnController < ApplicationController
   end
 
   def search
-    isbn = params[:isbn]
+    isbn = params[:isbn].delete(' ', '-')
     if ISBN.valid?(isbn)
       isbn_13 = 
         if isbn.length == 13
@@ -24,7 +24,11 @@ class IsbnController < ApplicationController
         else
           ISBN.thirteen(isbn)
         end
-      redirect_to "/books/#{isbn_13}"
+      if Book.exists?(isbn_13: isbn)
+        redirect_to "/books/#{isbn_13}"
+      else
+        redirect_back fallback_location: root_path, alert: "ISBN does not match any book from our repository"
+      end
     else
       redirect_back fallback_location: root_path, alert: "Invalid ISBN"
     end
