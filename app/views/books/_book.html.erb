@@ -1,0 +1,12 @@
+<div class="row mt-3">
+  <h2><%= book.title %></h2>
+  <h5 class="author"><%= book.authors.map(&:full_name).join(", ") %></h5>
+  <div class="details">
+    <p>
+      <span class="label">ISBN:</span> <%= book.isbn_13 %> (<span class="label">ISBN10:</span> <%= book.isbn_10 %>)
+    </p>
+    <p>
+      <span class="label">Published:</span> <%= book.publication_year.year %> <span class="label">by</span> <%= book.publisher.name %>
+    </p>
+  </div>
+</div>
