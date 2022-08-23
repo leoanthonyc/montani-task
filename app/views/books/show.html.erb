@@ -1,7 +1,7 @@
 <div class="container container-fluid mt-3">
   <div class="row">
     <%= form_with url: '/isbn/search' do %>
-      <%= search_field_tag :isbn, nil, placeholder: "ISBN13 or ISBN 10" %>
+      <%= search_field_tag :isbn, nil, placeholder: "ISBN13 or ISBN10", minlength: 10 %>
       <%= submit_tag "Search", class: "btn btn-outline-secondary btn-sm" %>
     <% end %>
   </div>

@@ -24,7 +24,7 @@ class IsbnController < ApplicationController
         else
           ISBN.thirteen(isbn)
         end
-      if Book.exists?(isbn_13: isbn)
+      if Book.exists?(isbn_13: isbn_13)
         redirect_to "/books/#{isbn_13}"
       else
         redirect_back fallback_location: root_path, alert: "ISBN does not match any book from our repository"
