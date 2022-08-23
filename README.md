@@ -11,7 +11,7 @@
 			bundle install
 			bundle exec rake db:migrate
 			bundle exec rake db:seed
-			rails s
+			bin/dev
 			```
 		3. Go to [localhost](localhost:3000)
 
