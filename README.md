@@ -12,7 +12,7 @@ XYZ Books Application
 	bin/setup
 	bin/dev
 	```
-3. Go to [localhost](localhost:3000)
+3. Go to `localhostlocalhost:3000`
 
 ## How to run the test suite
 ```bash
