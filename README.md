@@ -8,9 +8,7 @@
 		1. Clone the repository
 		2. Move to the cloned repository and run the following commands:
 			```bash
-			bundle install
-			bundle exec rake db:migrate
-			bundle exec rake db:seed
+			bin/setup
 			bin/dev
 			```
 		3. Go to [localhost](localhost:3000)
