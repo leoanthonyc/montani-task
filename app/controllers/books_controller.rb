@@ -9,12 +9,17 @@ class BooksController < ApplicationController
       return
     end
 
-    book = Book.find_by(isbn_13: isbn_13)
-    if book
-      render json: {
-        "authors": book.authors.map(&:full_name).join(","),
-        "publisher": book.publisher.name
-      }.to_json
+    @book = Book.find_by(isbn_13: isbn_13)
+    if @book
+      respond_to do |format|
+        format.html
+        format.json do
+          render json: {
+            "authors": @book.authors.map(&:full_name).join(","),
+            "publisher": @book.publisher.name
+          }
+        end
+      end
     else
       head :not_found
     end

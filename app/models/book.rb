@@ -14,4 +14,8 @@ class Book < ApplicationRecord
   end
   alias_attribute :author=, :authors=
   alias_attribute :author, :authors
+
+  def isbn_10
+    ISBN.ten(isbn_13)
+  end
 end
