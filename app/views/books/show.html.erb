@@ -4,4 +4,7 @@
   <p>
     <span class="label">ISBN:</span> <%= @book.isbn_13 %> (<span class="label">ISBN10:</span> <%= @book.isbn_10 %>)
   </p>
+  <p>
+    <span class="label">Published:</span> <%= @book.publication_year.year %> <span class="label">by</span> <%= @book.publisher.name %>
+  </p>
 </div>
