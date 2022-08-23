@@ -1,19 +1,21 @@
-<div>
-  <%= form_with url: '/isbn/search' do %>
-    <%= search_field_tag :isbn %>
-    <%= submit_tag "Search" %>
-  <% end %>
-</div>
+<div class="container container-fluid mt-3">
+  <div class="row">
+    <%= form_with url: '/isbn/search' do %>
+      <%= search_field_tag :isbn, nil, placeholder: "ISBN13 or ISBN 10" %>
+      <%= submit_tag "Search", class: "btn btn-outline-secondary btn-sm" %>
+    <% end %>
+  </div>
 
-<div>
-  <h1><%= @book.title %></h1>
-  <h2><%= @book.authors.map(&:full_name).join(", ") %></h2>
-  <div class="details">
-    <p>
-      <span class="label">ISBN:</span> <%= @book.isbn_13 %> (<span class="label">ISBN10:</span> <%= @book.isbn_10 %>)
-    </p>
-    <p>
-      <span class="label">Published:</span> <%= @book.publication_year.year %> <span class="label">by</span> <%= @book.publisher.name %>
-    </p>
+  <div class="row mt-3">
+    <h1><%= @book.title %></h1>
+    <h2><%= @book.authors.map(&:full_name).join(", ") %></h2>
+    <div class="details">
+      <p>
+        <span class="label">ISBN:</span> <%= @book.isbn_13 %> (<span class="label">ISBN10:</span> <%= @book.isbn_10 %>)
+      </p>
+      <p>
+        <span class="label">Published:</span> <%= @book.publication_year.year %> <span class="label">by</span> <%= @book.publisher.name %>
+      </p>
+    </div>
   </div>
 </div>
