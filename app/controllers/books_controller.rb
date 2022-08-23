@@ -21,7 +21,12 @@ class BooksController < ApplicationController
         end
       end
     else
-      head :not_found
+      respond_to do |format|
+        format.html do
+          flash[:error] = "ISBN does not match any book from our repository"
+        end
+        format.json { head :not_found }
+      end
     end
   end
 end
