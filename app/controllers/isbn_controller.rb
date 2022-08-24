@@ -1,13 +1,13 @@
 class IsbnController < ApplicationController
   def toggle
-    isbn = params[:isbn]
+    isbn = params[:isbn].delete(' ', '-')
     unless ISBN.valid?(isbn)
       head :bad_request
       return
     end
 
     other_isbn = 
-      if isbn.length == 13
+      if isbn.length >= 13
         ISBN.ten(isbn)
       else
         ISBN.thirteen(isbn)
@@ -19,7 +19,7 @@ class IsbnController < ApplicationController
     isbn = params[:isbn].delete(' ', '-')
     if ISBN.valid?(isbn)
       isbn_13 = 
-        if isbn.length == 13
+        if isbn.length >= 13
           isbn
         else
           ISBN.thirteen(isbn)
