@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    isbn_13 = params[:id]
+    isbn_13 = params[:id].delete('-')
     unless ISBN.valid?(isbn_13)
       head :bad_request 
       return
